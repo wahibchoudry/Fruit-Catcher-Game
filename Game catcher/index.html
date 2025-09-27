@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fruit Catcher</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Falling Fruits Background for Menu -->
+  <canvas id="menuBackground"></canvas>
+
+  <!-- Main Menu -->
+  <div id="menu" class="screen active">
+    <h1>🍓 Fruit Catcher 🍓</h1>
+    <button onclick="showScreen('game')">▶ Play Game</button>
+    <button onclick="showScreen('instructions')">📖 Instructions</button>
+    <button onclick="showScreen('exit')">❌ Exit</button>
+  </div>
+
+  <!-- Instructions -->
+  <div id="instructions" class="screen">
+    <h2>📖 How to Play</h2>
+    <p>🎮 Use ⬅ and ➡ arrow keys to move the basket.</p>
+    <p>🍏 Catch fruits to score points.</p>
+    <p>❌ Miss 5 fruits and the game ends.</p>
+    <button onclick="showScreen('menu')">⬅ Back to Menu</button>
+  </div>
+
+  <!-- Game Screen -->
+  <div id="game" class="screen">
+    <canvas id="gameCanvas"></canvas>
+    <div id="scoreBoard">
+      <span id="score">Score: 0</span>
+      <span id="missed">Missed: 0</span>
+    </div>
+    <button onclick="endGame()">🏠 End Game</button>
+  </div>
+
+  <!-- Exit Screen -->
+  <div id="exit" class="screen">
+    <h2>👋 Thanks for Playing!</h2>
+    <button onclick="showScreen('menu')">⬅ Back to Menu</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
